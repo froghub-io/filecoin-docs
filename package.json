@@ -63,7 +63,13 @@
     "format:styles": "stylus-supremacy format ./docs/.vuepress/**/*.styl --replace",
     "docs:dev": "vuepress --no-clear-screen dev docs",
     "docs:build": "npm run docs:links && vuepress build docs",
-    "docs:links": "vuepress check-md docs"
+    "docs:links": "vuepress check-md docs",
+    "start-zh": "npm run docs-zh:dev",
+    "format-zh:styles": "stylus-supremacy format ./docs-zh/.vuepress/**/*.styl --replace",
+    "docs-zh:dev": "vuepress --no-clear-screen dev docs-zh",
+    "docs-zh:build": "npm run docs-zh:links && vuepress build docs-zh",
+    "docs-zh:links": "vuepress check-md docs",
+    "tetsd": "vuepress check-md docs"
   },
   "dependencies": {
     "vue-tabs-component": "^1.5.0",
