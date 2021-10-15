@@ -24,7 +24,7 @@ description: "您可以备份Lotus节点。然后，如果出现问题，或者�
     Datastore backup done
     ```
 
-1. Lotus守护进程数据现在已经备份到 `lotus-backup.cbor`.
+1. lotus daemon数据现在已经备份到 `lotus-backup.cbor`.
 
 ## 恢复
 

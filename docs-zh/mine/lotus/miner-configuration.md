@@ -308,7 +308,7 @@ Batch 0:
 在Lotus v1.10.0及以上版本中，如果`AggregateCommits`被设置为false，证明承诺一旦准备好，将通过`ProveCommitSector`消息被发送到链上。如果 "AggregateCommits "设置为true，lotus将聚合和批处理预承诺，直到 "MaxCommitBatch"、"CommitBatchWait "或 "CommitBatchSlack "中的任何一个被击中。
 - `MaxCommitBatch'是在一个`ProveCommitAggregate'消息中批处理的部门证明承诺的最大数量。根据FIP-0013，这个值最多为819。
 - `CommitBatchWait'是在越过`MinCommitBatch'后，在提交当前批次前**等待的时间。注意：证明承诺必须在预承诺登陆链后30天内**提交。建议将此值设置为低于30天，以防止抵押品损失。
-- `CommitBatchSlack`是在任何部门的预先承诺或交易过期之前，强行提交当前批次的时间缓冲。例如，如果这个值设置为1小时，也就是120个纪元，那么在本批预承诺到期和交易开始纪元中最早的纪元前120个纪元，将为现有批次提交一个`证明承诺Aggregate'消息。**我们建议你设置一个较长的松弛时间，以防止由于交易到期或抵押品损失而导致消息失败**。
+- `CommitBatchSlack`是在任何部门的预先承诺或交易过期之前，强行提交当前批次的时间缓冲。例如，如果这个值设置为1小时，也就是120个纪元(epoch)，那么在本批预承诺到期和交易开始纪元中最早的纪元前120个纪元，将为现有批次提交一个`证明承诺Aggregate'消息。**我们建议你设置一个较长的松弛时间，以防止由于交易到期或抵押品损失而导致消息失败**。
 - `AggregateAboveBaseFee`是开始聚合证明的网络基础费用。当网络基础费用低于此值时，证明承诺将通过`ProveCommitSector`单独提交。**根据FIP-0013中引入的[Batch Incentive Alignment](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0013.md#batch-incentive-alignment)，我们建议你将此值设置为0.15 nanoFIL，以避免在燃烧中出现意外的聚合费用。**
 
 `MinCommitBatch'是在一个`ProveCommitAggregate'消息中被分批的最小扇区证明承诺量。根据FIP-0013，该值不能小于4，这是证明-承诺集合在单一证明-承诺gas成本上获胜的交叉点。如果 "MaxCommitBatch"、"CommitBatchWait "或 "CommitBatchSlack "中的任何一个被证明承诺量击中，则该批中的证明承诺将通过 "ProveCommitSector "单独进行。

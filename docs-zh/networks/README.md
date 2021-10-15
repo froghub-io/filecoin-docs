@@ -14,7 +14,7 @@ Filecoin有两个可用的网络:
 - [Mainnet](#mainnet), 唯一生产Filecoin网络。
 - [Calibration](#calibration), Filecoin的主要测试网络。
 
-::: 提示
+::: tip
 检查每个网络的状态并订阅[status.filecoin.io](https://status.filecoin.io)的更新。
 :::
 
@@ -27,15 +27,15 @@ Mainnet是Filecoin的主要网络。主网开始于148888号街区。支持32gib
 **Genesis**:
 
 - CAR 文件: `QmavMCf95w2UMYGD1J5GpHcWBWXR2jTFYmtAkgeroMmpk1`
-- 重置时间戳: `2020-08-24T22:00:00Z`
+- Reset时间戳: `2020-08-24T22:00:00Z`
 - Genesis 块 CID: `bafy2bzacecnamqgqmifpluoeldx7zzglxcljo6oja4vrmtj7432rphldpdmm2`
-- sha1 消化: `4782cb42b4b01793b5cd9f593cc3dc87b6d3c7b4`
+- sha1 Digest: `4782cb42b4b01793b5cd9f593cc3dc87b6d3c7b4`
 
 **网络参数**:
 
-- Supported Sector Sizes: `32 GiB` and `64 GiB`
-- Consensus Miner Min Power: `10 TiB`
-- Epoch Duration Seconds: `30`
+- 支持扇区大小: `32 GiB` and `64 GiB`
+- 共识Miner最小算力: `10 TiB`
+- Epoch间隔: `30 s`
 - Expected Leaders per Epoch: `5`
 - WindowPoSt Proving Period: `2880`
 - WindowPoSt Challenge Window: `60`
@@ -76,13 +76,13 @@ Mainnet是Filecoin的主要网络。主网开始于148888号街区。支持32gib
 - [Block explorer: Filscan](https://filscan.io/)
 - [Block explorer: Filscout](https://filscout.io/)
 
-### 校准
+### Calibration
 
-校准网络是最真实的模拟Filecoin主网:
+Calibration网络是最真实的模拟Filecoin主网:
 
 - 由于使用最终证明结构和参数，未来的存储miner可以体验更现实的密封性能和硬件要求。
 - 未来的存储客户端可以在网络上存储和检索真实的数据。客户可以参与交易流程和存储+检索功能。
-- 扇区大小与主网相同。校准网络支持32gib和64gib扇区。
+- 扇区大小与主网相同。Calibration网络支持32gib和64gib扇区。
 
 **Maintainer**: [Protocol Labs](https://protocol.ai)
 
@@ -127,4 +127,4 @@ Mainnet是Filecoin的主要网络。主网开始于148888号街区。支持32gib
 
 |名称|描述|弃用的|
 | --- | --- | --- |
-| Nerpa |微小扇区大小的测试网络。这个网络是为应用程序开发人员在转移到校准测试网络之前测试他们的应用程序的非常基本的功能。| 2021-08-16 |
+| Nerpa |微小扇区大小的测试网络。这个网络是为应用程序开发人员在转移到Calibration测试网络之前测试他们的应用程序的非常基本的功能。| 2021-08-16 |

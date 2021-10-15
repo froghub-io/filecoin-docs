@@ -72,7 +72,7 @@ description: Filecoin规范、实现和生态系统的有用参考资料。
 
 + **主网**
   + [Mainnet 网络状态](https://filecoin.statuspage.io/) - 报告Filecoin主网的状态和事件.
-+ **校准**
++ **Calibration**
   + 最大的测试网，支持32GiB和64GiB扇区。
   + 看 [#fil-net-calibration-announce](https://filecoinproject.slack.com/archives/C01C5PT7ETC) 公告和 [#fil-net-calibration-discuss](https://filecoinproject.slack.com/archives/C01D42NNLMS) 提问和讨论 [Filecoin Slack](https://filecoin.io/slack).
 + **本地开发网**
@@ -87,8 +87,8 @@ description: Filecoin规范、实现和生态系统的有用参考资料。
 ### 块探险家
 
 - [Filfox.info](https://filfox.info/en) -  主网
-- [Filscan](https://filscan.io) -  主网 & 校准
-- [Filscout](https://filscout.io) - 主网 & 校准
+- [Filscan](https://filscan.io) -  主网 & Calibration
+- [Filscout](https://filscout.io) - 主网 & Calibration
 - [1475 Filecoin Explorer](https://1475ipfs.com/#/blockBrowser) -  主网
 - [Grafana](https://stats.filecoin.io/) - 网络统计仪表板
   - [Mainnet](https://stats.filecoin.io/)
@@ -179,7 +179,7 @@ description: Filecoin规范、实现和生态系统的有用参考资料。
 
 #### 存储提供程序索引API
 
-+ [Figment - miner声誉系统API](https://learn.figment.io/network-documentation/filecoin/rpc-and-rest-api/miner-reputation-system-api) - 基于miner存储容量，扇区故障和交易削减的声誉评分。
++ [Figment - miner声誉系统API](https://learn.figment.io/network-documentation/filecoin/rpc-and-rest-api/miner-reputation-system-api) - 基于miner存储容量，扇区故障和交易惩罚的声誉评分。
 + [Filrep.io API](https://filrep.io/api) - 一套RESTFul JSON端点，用于发现最好的存储提供商进行交易。
 + [Textile Miner Index](https://blog.textile.io/introducing-the-miner-index/) - API和CLI通过价格，观察交易，从北美节点的速度找到miner
 

@@ -41,7 +41,7 @@ breadcrumb: 'Lotus Workers'
 |     | Commit2 | 92%*** | 64G+60G | 64G+190G | If Present |  
 
 \* AddPiece可以使用多个线程，这个值可能会在不久的将来改变\
-** 当使用' FIL_PROOFS_USE_MULTICORE_SDR=1 ' env var时，PreCommit1可以使用多个核(最多的核共享L3缓存的数量)\  
+** 当使用 `FIL_PROOFS_USE_MULTICORE_SDR=1` env var时，PreCommit1可以使用多个核(最多的核共享L3缓存的数量)\
 *** 取决于可用线程的数量，这个值意味着:
 
 ```
@@ -57,7 +57,7 @@ breadcrumb: 'Lotus Workers'
 
 Unseal任务与PreCommit1任务具有相同的资源用途。
 
-### 资源窗口
+### 资源窗口(Resource windows)
 
 调度器使用了资源窗口的概念，以防止需要大量资源的任务被资源需求较小的任务占用。  
 
@@ -92,14 +92,14 @@ Unseal任务与PreCommit1任务具有相同的资源用途。
 | ReadUnsealed | -1       |
 | Finalize     | -2       |
 
--数字越小，优先级越高。  
--负数表示优先级最高。
+- 数字越小，优先级越高。  
+- 负数表示优先级最高。
 
 比较任务优先级时:  
--优先级高的任务优先考虑  
--有交易的扇区被认为是第二(交易越多优先级越高)  
--如果相等，则根据表中的优先级选择任务  
--如果以上相同，选择扇区数较低的扇区(这可以在向链提交消息时略微优化gas使用)
+- 优先级高的任务优先考虑  
+- 有交易的扇区被认为是第二(交易越多优先级越高)  
+- 如果相等，则根据表中的优先级选择任务  
+- 如果以上相同，选择扇区数较低的扇区(这可以在向链提交消息时略微优化gas使用)
 
 ## 安装
 
@@ -166,7 +166,7 @@ export FIL_PROOFS_USE_MULTICORE_SDR=1
 ```
 
 ::: tip
-当初始获取参数文件时，记得设置[' IPFS_GATEWAY '变量时，从中国运行](tips-running-in-china.md)  
+当初始获取参数文件时，记得设置[`IPFS_GATEWAY`变量时，从中国运行](tips-running-in-china.md)  
 :::
 
 ### 运行 worker
@@ -204,7 +204,7 @@ Worker 1, host othercomputer
 
 ### Miner 和 worker 一起工作
 
-您可以在与_Lotus Miner_相同的机器上运行_Lotus Worker_。 这有助于管理进程之间的优先级，或更好地为每个任务分配可用的cpu。 为了避免冲突，我们建议禁用miner密封配置中的所有任务类型。
+您可以在与 _Lotus Miner_ 相同的机器上运行 _Lotus Worker_。 这有助于管理进程之间的优先级，或更好地为每个任务分配可用的cpu。 为了避免冲突，我们建议禁用miner密封配置中的所有任务类型。
 
 另外，要注意密封进程使用的本地资源(特别是CPU)。 windowpost是CPU密集型的，需要定期由miner提交。 如果一个miner正在并行执行其他cpu绑定的密封操作，它可能无法及时提交windowpost，因此[丢失抵押品](../slashing.md)。 出于这个原因，我们建议将可用的CPU核和密封阶段仔细分配给Lotus miner和Lotus Workers。
 
@@ -212,12 +212,12 @@ Worker 1, host othercomputer
 
 ### Lotus Worker 协同定位
 
-在大多数情况下，每台机器只能运行一个Lotus Worker，因为“Lotus - Worker”将尝试使用所有可用资源。 在一个操作系统上下文中运行多个Lotus Workers将导致资源分配问题，这将导致调度程序分配比可用资源更多的工作。  
+在大多数情况下，每台机器只能运行一个Lotus Worker，因为 _Lotus Worker_ 将尝试使用所有可用资源。 在一个操作系统上下文中运行多个Lotus Workers将导致资源分配问题，这将导致调度程序分配比可用资源更多的工作。  
 
 唯一的情况下每台机器运行多个worker可能是一个好主意,当有多个可用的GPU, lotus目前只支持一个GPU -在这种情况下,建议与worker重叠运行在单独的容器资源(CPU核分离,单独的内存分配,单独的GPU)
 
 #### 分离Nvidia gpu
 
-当使用专有的Nvidia驱动程序时，可以使用' NVIDIA_VISIBLE_DEVICES=[device number] env var来选择Lotus将使用哪个GPU设备。
+当使用专有的Nvidia驱动程序时，可以选择Lotus将使用哪个GPU设备，并使用`Nvidia_VISIBLE_DEVICES=[device number]`环境变量。
 
-设备编号可以通过“nvidia-smi -L”命令获取。
+设备编号可以通过`nvidia-smi -L`命令获取。

@@ -9,7 +9,7 @@ breadcrumb: '存储'
 在Filecoin上存储数据可以让用户利用分布式网络的力量，以及由数千个不同的存储提供商或miner服务的开放市场。  
 
 :::tip 正在寻找快速入门指南?
-在Filecoin网络上存储和检索数据与您可能使用过的其他服务或api有些不同。 这就是为什么我们把[Store & retrieve指南放在一起→](../get-started/ Store -and-retrieve)
+在Filecoin网络上存储和检索数据与您可能使用过的其他服务或api有些不同。 这就是为什么我们把[Store & retrieve指南放在一起→](../get-started/store-and-retrieve)
 :::
 
 ## 开始使用

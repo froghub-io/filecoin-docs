@@ -1,6 +1,6 @@
 ---
 title: 'Lotus Miner: 消息池'
-description: '消息池（消息池）是Lotus的组件，用于处理待处理的消息以包含在链中。'
+description: '消息池（mpool）是Lotus的组件，用于处理待处理的消息以包含在链中。'
 breadcrumb: '消息池'
 ---
 
@@ -69,13 +69,13 @@ lotus mpool pending --local | grep "Nonce" -A5
 lotus mpool replace --auto <from> <nonce>
 ```
 
-上面的命令将替换池中的相关消息，并根据当前网络条件的估计，自动使用新的_GasPremium_和_GasFeeCap_重新定价。你也可以设置' -fee-limit '，如果你希望限制总金额的消费信息。所有其他标志都被忽略。
+上面的命令将替换池中的相关消息，并根据当前网络条件的估计，自动使用新的 _GasPremium_ 和 _GasFeeCap_ 重新定价。你也可以设置' -fee-limit '，如果你希望限制总金额的消费信息。所有其他标志都被忽略。
 
-::: 警告
+::: warning
 `--fee-limit` 使用带有小数支持的FIL单位，然而 `--max-fee` 使用 `attoFIL`.
 :::
 
-或者，_GasPremium_， _GasFeeCap_可以用它们各自的标志手动设置:
+或者，_GasPremium_， _GasFeeCap_ 可以用它们各自的标志手动设置:
 
 ```sh
 lotus mpool replace --gas-feecap <feecap> --gas-premium <premium> <from> <nonce>
@@ -83,7 +83,7 @@ lotus mpool replace --gas-feecap <feecap> --gas-premium <premium> <from> <nonce>
 
 如果新的 _gas premium_ 低于原始比率的 1.25，则该消息将不包含在池中。直接使用 [`MpoolPush` API method](../../reference/lotus-api.md) 方法时，可以更改其他消息字段，例如事务的接收者。在这种情况下，新消息将需要首先在本地签名。
 
-在正常情况下，不应改变_GasLimit_。关于如何使用可选标志来替换_GasLimit_的说明，请参考以下内容：
+在正常情况下，不应改变 _GasLimit_。关于如何使用可选标志来替换 _GasLimit_ 的说明，请参考以下内容：
 
 ```sh
 lotus mpool replace --help

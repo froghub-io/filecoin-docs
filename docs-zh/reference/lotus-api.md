@@ -545,7 +545,7 @@ Response:
 ```
 
 ### ChainGetTipSetByHeight
-ChainGetTipSetByHeight 可以回溯到指定纪元的 tipset 。
+ChainGetTipSetByHeight 可以回溯到指定纪元(epoch)的 tipset 。
 如果在指定的纪元没有块，将返回一个较早纪元的 tipset 。
 
 

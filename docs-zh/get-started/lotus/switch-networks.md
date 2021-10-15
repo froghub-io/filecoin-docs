@@ -22,7 +22,7 @@ breadcrumb: 切换网络
 
 第一种方法是最简单的。在这种方法中，您将删除与之前运行的网络相关的所有数据，并启动为在新网络上运行而构建的 Lotus 二进制文件：
 
-1. 关闭Lotus守护进程是否正在运行.
+1. 关闭lotus daemon是否正在运行.
 1. 删除“~ / .lotus"的文件夹,或无论你设置"$LOTUS_PATH"。默认是“~ / .lotus”
 1. 克隆Lotus库和进入“Lotus”文件夹中:
 
@@ -39,7 +39,7 @@ breadcrumb: 切换网络
    | Calibnet | `make clean calibnet` | 一个测试网络最低扇区大小为32 Gib·FIL这网络上没有实际价值. |
    | Nerpanet | `make clean nerpanet` | 一个测试网络最低扇区大小为512 Mib·FIL这网络上没有实际价值. |
 
-2. 再次启动Lotus守护进程,让它同步到新网络:
+2. 再次启动lotus daemon,让它同步到新网络:
 
     ```shell
     lotus daemon

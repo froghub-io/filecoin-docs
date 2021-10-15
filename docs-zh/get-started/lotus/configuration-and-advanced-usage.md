@@ -18,7 +18,7 @@ Lotus 守护进程在`~/.lotus/config.toml`. 请注意，默认情况下，所�
 [API]
   # 为 Lotus API 绑定地址
   ListenAddress = "/ip4/127.0.0.1/tcp/1234/http"
-  # 不用到Lotus守护进程
+  # 不用到lotus daemon
   RemoteListenAddress = ""
   # 常规网络超时值
   Timeout = "30s"

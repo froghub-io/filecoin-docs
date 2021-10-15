@@ -36,10 +36,10 @@ lotus client retrieve --miner f0127896 <DATA_CID> /tmp/retrieved_613mb_file
 
     ```shell
     Created          DealCid                                                      DealId  Provider  State                          On Chain?  Slashed?  PieceCID                                                          Size      Price          Duration  TransferChannelID                                                                                                              TransferStatus  Verified  Message
-Jun 21 23:00:07  bafyreig237v7gnohrn3k425v5xnavgn6pbddvhjm3whjpko5r4vqvjfdmy  0       f0127896  StorageDealCheckForAcceptance  N          N         baga6ea4seaqj24gc2ov6ixvng6rbtscwykbvexl7hmobr7zrg6l56bfsmhg7kky  1016 MiB  0.0521085 FIL  521085    12D3KooWK5tFBXQghZm3E6JBAiGkhVeM2Bo6drZLmEzQJyV7NwV5-12D3KooWQrZnhRaBecSZYKR815zH65xkg1TvfyPWUGYwehHvVEKB-1624329431588035303  Completed       false     Provider state: StorageDealWaitingForData
+   Jun 21 23:00:07  bafyreig237v7gnohrn3k425v5xnavgn6pbddvhjm3whjpko5r4vqvjfdmy  0       f0127896  StorageDealCheckForAcceptance  N          N         baga6ea4seaqj24gc2ov6ixvng6rbtscwykbvexl7hmobr7zrg6l56bfsmhg7kky  1016 MiB  0.0521085 FIL  521085    12D3KooWK5tFBXQghZm3E6JBAiGkhVeM2Bo6drZLmEzQJyV7NwV5-12D3KooWQrZnhRaBecSZYKR815zH65xkg1TvfyPWUGYwehHvVEKB-1624329431588035303  Completed       false     Provider state: StorageDealWaitingForData
     ```
 
-1. 完成
+2.Done
 
 ## Miner ID
 
@@ -49,7 +49,7 @@ Jun 21 23:00:07  bafyreig237v7gnohrn3k425v5xnavgn6pbddvhjm3whjpko5r4vqvjfdmy  0 
     lotus client get-deal bafyreig237v7gnohrn3k425v5xnavgn6pbddvhjm3whjpko5r4vqvjfdmy | jq '."DealInfo: "."Provider"'
     ```
 
-    This gives you the Miner ID:
+    得到 Miner ID:
 
     ```
     "f0127896"
@@ -65,7 +65,7 @@ Jun 21 23:00:07  bafyreig237v7gnohrn3k425v5xnavgn6pbddvhjm3whjpko5r4vqvjfdmy  0 
     lotus client get-deal bafyreig237v7gnohrn3k425v5xnavgn6pbddvhjm3whjpko5r4vqvjfdmy | jq '."DealInfo: "."DataRef"."Root"."/"'
     ```
 
-    这给你了 Data CID:
+    得到 Data CID:
 
     ```shell
     "bafykbzacecjiqho3qy2wwvtdqwhwalsklpdwrssn7jmg7jzvuya75xtuir2yg"

@@ -11,7 +11,7 @@ breadcrumb: 挖矿
 {{ $frontmatter.description }} 本节中的内容将帮助您:
 
 - 了解 [采矿如何运作](how-mining-works.md) 以及存在哪些不同类型的 Miner。
-- 了解 Miner 完成工作后如何获得 [奖励](mining-rewards.md), 当他们无法履行交易时如何[削减](slashing.md) .
+- 了解 Miner 完成工作后如何获得 [奖励](mining-rewards.md), 当他们无法履行交易时如何[惩罚](slashing.md) .
 - 了解不同的 [采矿架构](mining-architectures.md).
 - 设置并运行高性能 [Lotus Miner](lotus/README.md).
 

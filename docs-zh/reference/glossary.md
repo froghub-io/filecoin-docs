@@ -9,19 +9,19 @@ Filecoin 网络中，地址 (Address) 是唯一的加密值，用于公开标识
 
 ## Block
 
-在区块链中，区块 (Block) 是记录的基本单位。每个块以密码方式链接到一个或多个先前的块。区块通常包含[消息](#消息)，与区块链跟踪的某些状态（例如，财务记录）的变化相关。
+在区块链中，区块 (Block) 是记录的基本单位。每个块以密码方式链接到一个或多个先前的块。区块通常包含[Message](#Message)，与区块链跟踪的某些状态（例如，财务记录）的变化相关。
 
 ## Blockchain
 
-基本上，区块链 (Blockchain) 是一种记录系统，其中新记录或[区块](#区块)以加密方式链接到先前的记录。这种结构是安全、可验证和分布式事务账本的基础组件。
+基本上，区块链 (Blockchain) 是一种记录系统，其中新记录或[区块](#Block)以加密方式链接到先前的记录。这种结构是安全、可验证和分布式事务账本的基础组件。
 
 ## Block height
 
-[区块](#区块)的高度 (Block height) 与区块链添加到区块链之前经过的纪元的数量相对应。Filecoin 区块链的高度定义为区块链中任何区块的最大高度
+[区块](#区块)的高度 (Block height) 与区块链添加到区块链之前经过的纪元(epoch)的数量相对应。Filecoin 区块链的高度定义为区块链中任何区块的最大高度
 
 ## Capacity commitment
 
-如果一家存储矿业公司认为任何可用的交易方案都没有吸引力，他们也可以做出一个容量承诺(capacity commitments)，用任意数据而不是客户数据填充[扇区](#扇区)。维护此扇区允许存储 miner 证明他们正在代表网络预留空间。
+如果一家存储矿业公司认为任何可用的交易方案都没有吸引力，他们也可以做出一个容量承诺(capacity commitments)，用任意数据而不是客户数据填充[扇区](#sector)。维护此扇区允许存储 miner 证明他们正在代表网络预留空间。
 
 ## Collateral
 
@@ -33,7 +33,7 @@ Filecoin 网络中的两个参与者可以签订一项协议，其中一方承�
 
 ## Election
 
-每个纪元，Filecoin 存储 miner 的一小部分被选中为 Filecoin 区块链挖掘新的区块。miner 当选的概率大致与他们贡献的 Filecoin 网络总存储容量的份额成正比。
+每个纪元(epoch)，Filecoin 存储 miner 的一小部分被选中为 Filecoin 区块链挖掘新的区块。miner 当选的概率大致与他们贡献的 Filecoin 网络总存储容量的份额成正比。
 
 ## Epoch
 
@@ -49,7 +49,7 @@ Faucet 是一种提供免费服务的服务。通常情况下，Faucet 是为了
 
 ## Fault
 
-当存储 miner 无法完成给定扇区的[窗口时空证明](#windowpost)时，Filecoin 网络会为该扇区注册一个 _fault_ ，并且 miner 是削减（slash）。如果存储 miner 不能快速解决故障，则网络假定他们已放弃承诺。
+当存储 miner 无法完成给定扇区的[WindowPoSt](#windowpost)时，Filecoin 网络会为该扇区注册一个 _fault_ ，并且 miner 是惩罚（slash）。如果存储 miner 不能快速解决故障，则网络假定他们已放弃承诺。
 
 ## Filecoin
 
@@ -61,7 +61,7 @@ Finality是指记录到Filecoin区块链的消息和状态的不变性。 当新
 
 ## Gas
 
-Gas 是[消息](#消息)的属性，对应于在给定的区块中包含该消息所涉及的资源。对于块中包含的每条消息，块的创建者从消息的发送方提取一个费用；该费用与消息的 Gas 成比例。
+Gas 是[Message](#Message)的属性，对应于在给定的区块中包含该消息所涉及的资源。对于块中包含的每条消息，块的创建者从消息的发送方提取一个费用；该费用与消息的 Gas 成比例。
 
 ## Mainnet
 
@@ -76,11 +76,11 @@ Gas 是[消息](#消息)的属性，对应于在给定的区块中包含该消�
 
 ## miner
 
-Filecoin 项目使用术语 miner(miner)来指网络中为客户提供有价值服务的参与者。目前，Filecoin 规范识别两种 miner 类型：[存储 miner](#存储miner)和[检索 miner](#检索miner)。
+Filecoin 项目使用术语 miner(miner)来指网络中为客户提供有价值服务的参与者。目前，Filecoin 规范识别两种 miner 类型：[存储 miner](#storage-miner)和[检索 miner](#retrieval-miner)。
 
 ## Pledged storage
 
-miner 承诺通过[复制证明](#复制证明)为 Filecoin 网络保留的存储容量称为存储保证(pledged storage)。
+miner 承诺通过[复制证明](#proof-of-replication-porep)为 Filecoin 网络保留的存储容量称为存储保证(pledged storage)。
 
 ## Proof-of-Storage
 
@@ -93,7 +93,7 @@ miner 承诺通过[复制证明](#复制证明)为 Filecoin 网络保留的存�
 
 ## Proof-of-Spacetime (PoSt)
 
-时空证明 (Proof-of-Spacetime) 是一个过程，存储 miner 可以向 Filecoin 网络证明他们代表网络继续存储某些数据的唯一副本。在当前的 Filecoin 规范中，时空证明有两种不同的表现形式：[时空窗口证明](#windowpost)和[时空胜利证明](#winningpost)。
+时空证明 (Proof-of-Spacetime) 是一个过程，存储 miner 可以向 Filecoin 网络证明他们代表网络继续存储某些数据的唯一副本。在当前的 Filecoin 规范中，时空证明有两种不同的表现形式：[WindowPoSt](#windowpost)和[WinningPoSt](#winningpost)。
 
 ## Quality-adjusted storage power
 
@@ -113,7 +113,7 @@ _封装 (Seal)_ 是 Filecoin 协议的基本组成部分之一。它是一个在
 
 ## Slash
 
-当扇区（sector）注册了一个错误（fault），Filecoin 网络将删除本应存储该扇区的存储 miner；也就是说，它将评估对未遵守存储承诺的 miner 的处罚（从 miner 提供的抵押品（collateral）中支付）。当削减(slashing)发生时，为了[选举](#election)，从 miner 的总权力中减去 miner 为相关部门赚取的权力。
+当扇区（sector）注册了一个错误（fault），Filecoin 网络将删除本应存储该扇区的存储 miner；也就是说，它将评估对未遵守存储承诺的 miner 的处罚（从 miner 提供的抵押品（collateral）中支付）。当惩罚(slashing)发生时，为了[选举](#election)，从 miner 的总权力中减去 miner 为相关部门赚取的权力。
 
 ## Storage miner
 
@@ -157,10 +157,10 @@ _封装 (Seal)_ 是 Filecoin 协议的基本组成部分之一。它是一个在
 
 _WindowProof-of-Spacetime_（WindowPoSt） 是审核存储 miner 所做承诺的机制。它将每个 24 小时划分为一系列窗口。相应地，每个存储 miner 的抵押扇区被划分为子集，每个窗口有一个子集。在给定的窗口内，每个存储 miner 必须为其各自子集中的每个扇区提交一份[时空证明](#proof-of-spacetime-post)。这需要随时访问每个被挑战的扇区，并将导致零知识论元证明以区块中的消息发布到 Filecoin 区块链。通过这种方式，在任何 24 小时内，至少对质押保管的每个部门进行一次审计，并保存一份永久的、可核实的、公开的记录，证明每个存储采矿者的持续承诺。
 
-Filecoin 网络期望存储数据的持续可用性。未能提交扇区的 WindowPoSt 将导致过错，并且为该扇区提供的存储 miner 将被[削减](#削减)。
+Filecoin 网络期望存储数据的持续可用性。未能提交扇区的 WindowPoSt 将导致过错，并且为该扇区提供的存储 miner 将被[Slash](#Slash)。
 
 ## WinningPoSt
 
-_Winning Proof-of-Spacetime_ (WinningPoSt) 是[存储miner](#storage-miner)对Filecoin网络的贡献进行奖励的机制。在每个[epoch](#epoch)开始时，少量的存储miner会被[选举](#election)，让他们各自开采一个新的[block](#block)。作为这样做的要求，每个miner的任务是提交一个指定[扇区](#sector)的压缩[存储证明](#proof-of-storage)。每个成功创建区块的当选miner都会被授予[FIL](#fil)，以及向其他Filecoin参与者收取费用的机会，以便在区块中包含[消息](#message)。
+_Winning Proof-of-Spacetime_ (WinningPoSt) 是[Storage miner](#storage-miner)对Filecoin网络的贡献进行奖励的机制。在每个[epoch](#epoch)开始时，少量的存储miner会被[Election](#election)，让他们各自开采一个新的[block](#block)。作为这样做的要求，每个miner的任务是提交一个指定[扇区](#sector)的压缩[存储证明](#proof-of-storage)。每个成功创建区块的当选miner都会被授予[FIL](#fil)，以及向其他Filecoin参与者收取费用的机会，以便在区块中包含[Message](#message)。
 
 未在必要的窗口内完成此操作的存储 miner 将丧失开采区块的机会，但不会因未能这样做而受到处罚。

@@ -17,10 +17,10 @@ Filecoin针对公共数据进行了优化，目前还不支持访问控制。如
 
 |变量|描述|示例|
 | --- | --- | --- |
-| Data CID |使用Filecoin存储的数据的CID (content identifier)。| |“bafk2bzaceajz56zudni2hli7id6jvvpo5n4wj5eoxm5xwj2ipthwc2pkgowwu”
-| Miner ID #1 |每个存储提供者的唯一标识符。对于本教程，您需要有两个存储提供程序id。|“f01000”
-| Miner ID #2 |每个存储提供者的唯一标识符。对于本教程，您需要有两个存储提供程序id。|“f01000”
-| Deal CID |与存储提供商交易的内容标识符(CID)。| |“bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau”
+| Data CID |使用Filecoin存储的数据的CID (content identifier)。| `bafk2bzaceajz56zudni2hli7id6jvvpo5n4wj5eoxm5xwj2ipthwc2pkgowwu`｜
+| Miner ID #1 |每个存储提供者的唯一标识符。对于本教程，您需要有两个存储提供程序id。|`f01000` |
+| Miner ID #2 |每个存储提供者的唯一标识符。对于本教程，您需要有两个存储提供程序id。|`f01000` |
+| Deal CID |与存储提供商交易的内容标识符(CID)。| `bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau` |
 
 ## 准备您的数据
 
@@ -54,7 +54,7 @@ Filecoin针对公共数据进行了优化，目前还不支持访问控制。如
 
 我们需要告诉Lotus lite节点要使用Filecoin存储哪个文件。
 
-1. 使用'import'命令将有效负载导入到' lotus daemon '中:
+1. 使用'import'命令将有效负载导入到`lotus daemon`中:
 
     ```shell
     lotus client import 5gb-filecoin-payload.bin 
@@ -68,7 +68,7 @@ Filecoin针对公共数据进行了优化，目前还不支持访问控制。如
 
    这个过程大约需要60秒。
 
-1. 记下CID ' bafykb…'。这是您的**数据CID**。我们将在下一节中使用它。
+1. 记下CID `bafykb…`。这是您的**Data CID**。我们将在下一节中使用它。
 
 现在Lotus知道了我们想要使用哪个文件，我们可以与Filecoin存储提供商创建一个协议来存储我们的数据!
 
@@ -88,9 +88,9 @@ Filecoin Plus Miner注册是一组地理上不同的存储提供商的集合，�
 
 让我们找几个存储提供商来存储我们的数据。
 
-1. 去(plus.fil.org/miners) (https://plus.fil.org/miners/)。
+1. 访问 [plus.fil.org/miners](https://plus.fil.org/miners/) 。
 1. 使用这个表，找到几个适合您需要的存储提供程序。尝试寻找地理位置上离你很近的存储提供商
-1. 一旦你找到了一些合适的存储提供商，从**Miner ID**列记下他们的_miner IDs_:
+1. 一旦你找到了一些合适的存储提供商，从**Miner ID**列记下他们的 _miner IDs_:
 
     ![Filecoin Plus Miner注册表中列出的存储提供商集合](./images/miner-x-listings.png)
 
@@ -106,9 +106,9 @@ Filecoin Plusminer注册表是一个很棒的资源，但它只代表整个Filec
 
 我们将使用FilRep检查我们选择的存储提供商的最小交易大小是否适合我们的文件大小。
 
-1. 去(filrep.io) (https://filrep.io)。
+1. 访问 [filrep.io](https://filrep.io).
 1. 单击**Settings**切换显示所有可用存储提供程序详细信息的列表。
-1. 确保选中了**最小文件大小**列:
+1. 确保选中了**Min File Size**列:
 
     ![](./images/filrep-select-columns.png)
 
@@ -123,18 +123,16 @@ Filecoin Plusminer注册表是一个很棒的资源，但它只代表整个Filec
 
 ## 达成协议
 
-要完成本节，您需要运行“lotus客户端导入”后收到的**Data CID**和希望使用的存储提供程序的id。
-
+要完成此部分，您需要在运行 `lotus client import` 后收到的 **Data CID** 以及要使用的存储提供程序的 ID。
 1. 启动互动交易流程:
 
     ```shell
     lotus client deal
     ```
 
-   互动交易助理现在会问你一些问题。
+   交互式交易助手现在会问您一些问题。
 
-1. 指定要在Filecoin上备份的有效载荷的CID。这是运行“lotus client import ~/5gb-filecoin-payload.bin”得到的CID:
-
+1. 指定要在 Filecoin 上备份的有效负载的 CID。 这是您通过运行 `lotus client import ~/5gb-filecoin-payload.bin` 获得的 CID：
     ```text output
     Data CID (from lotus client import): bafykbz...
     ```
@@ -153,7 +151,7 @@ Filecoin Plusminer注册表是一个很棒的资源，但它只代表整个Filec
     Deal duration (days): 180 0
     ``` 
 
-1. 告诉Lotus这是不是一个Filecoin Plus交易。因为你在之前的步骤中注册了Filecoin Plus，在这里选择“yes”:
+1. 告诉Lotus这是不是一个Filecoin Plus交易。因为你在之前的步骤中注册了Filecoin Plus，在这里选择`yes`:
 
     ```text output
     Make this a verified deal? (yes/no): yes
@@ -165,7 +163,7 @@ Filecoin Plusminer注册表是一个很棒的资源，但它只代表整个Filec
     Miner Addresses (f0.. f0..), none to find: f01000 f01001 
     ```
 
-1. 输入“yes”确认您的交易:
+1. 输入`yes`确认您的交易:
 
     ```text output
     -----
@@ -180,7 +178,7 @@ Filecoin Plusminer注册表是一个很棒的资源，但它只代表整个Filec
     Accept (yes/no): yes
     ```
 
-1. Lotus将返回两个**交易cid **:
+1. Lotus将返回两个 **Deal CIDs**:
 
     ```text output
     .. executing
@@ -188,13 +186,13 @@ Filecoin Plusminer注册表是一个很棒的资源，但它只代表整个Filec
     Deal (f01001) CID: bafeauyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpt
     ```
 
-1. 记下这笔交易cid ' baf…'。
+1. 记下 **deal CID** `baf...`。
 
 ## 查看交易状态
 
 一旦数据被发送到存储客户端，存储交易可能需要24小时才能完成。你可以查看交易的进展情况。
 
-1. 使用' lotus client List -deals '命令列出成功的和等待的交易:
+1. 使用 `lotus client List -deals`命令列出成功的和等待的交易:
 
     ```shell
     lotus client list-deals --show-failed
@@ -204,7 +202,7 @@ Filecoin Plusminer注册表是一个很棒的资源，但它只代表整个Filec
     Your Lotus lite-node needs to remain online until the deal state has reached `StorageDealActive`. See the [Processing states](#processing-states) table below to find out which states happen and when. 
     :::
 
-1. 你可以通过运行“lotus client list-transfers”来检查任何数据传输的进度:
+1. 您可以通过运行`lotus client list-transfers`来检查任何数据传输的进度：
 
     ```shell
     lotus client list-transfers
@@ -221,7 +219,7 @@ Filecoin Plusminer注册表是一个很棒的资源，但它只代表整个Filec
     ...
     ```
 
-   如果' lotus client list-transfers '的输出为空，那么您的传输已经完成:
+   如果`lotus client list-transfers`的输出为空，那么您的传输已经完成:
 
     ```shell with-output
     lotus client list-transfers
@@ -269,7 +267,7 @@ Filecoin Plusminer注册表是一个很棒的资源，但它只代表整个Filec
 | StorageDealProposalNotFound |您的全节点无法找到您正在寻找的交易。这可能是因为它不存在，或者您的全节点不同步。|
 | StorageDealProposalRejected|存储提供商选择不接受该交易。存储提供者可能在此状态消息旁边提供了原因，但并不总是如此。|
 | StorageDealRejecting | 存储提供商拒绝了该交易。这在StorageDealProposalRejected之前。|
-| StorageDealSlashed |数据在一个扇区中，存储提供商因为未能证明数据是可用的而被削减。|
+| StorageDealSlashed |数据在一个扇区中，存储提供商因为未能证明数据是可用的而被惩罚。|
 
 #### 信息状态
 

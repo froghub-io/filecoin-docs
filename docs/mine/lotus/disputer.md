@@ -58,6 +58,6 @@ You can manually send a specific dispute message using the `dispute` command. Th
 
 | Variable name  | Description                                                                                                      |
 | -------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `minerAddress` | The miner id that submitted the proof you want to dispute. The same address is also the recipient of the message |
-| `index`        | The deadline index of the proof you want to dispute for the miner.                                               |
-| `postIndex`    | The post snapshot index.                                                                                         |
+| `minerAddress` | 提交您要dispute的证明的Miner ID。 同一个地址也是消息的接收者|
+| `index`        | 您要为矿工dispute的证明的截止日期索引。                                             |
+| `postIndex`    | 提交快照索引。                                                                                       |

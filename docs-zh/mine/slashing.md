@@ -1,6 +1,6 @@
 ---
 title: '惩罚'
-description: '大幅削减对未能提供可靠的正常运行时间或恶意攻击网络的miner是一种惩罚'
+description: '惩罚那些无法提供可靠的正常运行时间或恶意攻击网络的矿工。'
 breadcrumb: '惩罚'
 ---
 

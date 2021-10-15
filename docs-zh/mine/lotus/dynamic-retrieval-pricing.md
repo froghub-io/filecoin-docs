@@ -14,7 +14,7 @@ Lotus允许您设置不同的策略来计算检索交易的报价。两个可用
 
 ## 默认策略
 
-默认定价策略使用在' Ask Store '中配置的价格，使用' lotus retrieve -deals set- Ask ' CLI命令设置价格，为所有检索交易定价。然而，如果有一个验证的有效载荷存储交易，它将不收取数据传输费用。这个行为可以通过在“DealMaking”中设置“VerifiedDealsFreeTransfer”标志为“false”来关闭。RetrievalPricing的配置部分:
+默认定价策略使用在`Ask Store`中配置的价格，使用`lotus retrieval-deals set-ask` CLI命令设置价格，为所有检索交易定价。然而，如果有一个验证的有效载荷存储交易，它将不收取数据传输费用。这个行为可以通过在`DealMaking`中设置`VerifiedDealsFreeTransfer`标志为`false`来关闭。RetrievalPricing的配置部分:
 
 ```toml
 [Dealmaking.RetrievalPricing]
@@ -27,7 +27,7 @@ VerifiedDealsFreeTransfer = false
 
 ## 外部政策
 
-用户可以配置一个外部定价脚本，类似于交易筛选机制，该脚本将一个JSON编组的' PricingInput '作为输入，并输出一个JSON编组的' Ask '，也称为_the quote_。' PricingInput '结构体定义如下:
+用户可以配置一个外部定价脚本，类似于交易筛选机制，该脚本将一个JSON编组的 `PricingInput` 作为输入，并输出一个JSON编组的`Ask`，也称为 _the quote_。`PricingInput`结构体定义如下:
 
 ```go
 type PricingInput struct {
@@ -54,7 +54,7 @@ type PricingInput struct {
 }
 ```
 
-输出' Ask '定义为:
+输出`Ask`定义为:
 
 ```go
 type Ask struct {
@@ -65,7 +65,7 @@ type Ask struct {
 }
 ```
 
-要使用这个模式而不是上面默认的“交易撮合”模式。配置中的RetrievalPricing '部分需要配置为使用' external '定价策略，并需要给出定价脚本的绝对路径:
+要使用此模式而不是上面的默认模式，配置的 `DealMaking.RetrievalPricing` 部分需要配置为使用 `external` 定价策略，并且需要给出定价脚本的绝对路径：
 
 ```toml
 [Dealmaking.RetrievalPricing]

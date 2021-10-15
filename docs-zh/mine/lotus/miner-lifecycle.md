@@ -30,7 +30,7 @@ breadcrumb: 生命周期
 
 ### 确保当前截止日期的证明已发送
 
-在仍有待处理操作的情况下关闭 miner 可能会导致 miner[大幅削减](../slashing.md)。通过运行`lotus-miner proving info`来检查是否有未执行操作。如果任何的过去的期限显示 _拦截高度_，请不要重新启动。
+在仍有待处理操作的情况下关闭 miner 可能会导致 miner[惩罚](../slashing.md)。通过运行`lotus-miner proving info`来检查是否有未执行操作。如果任何的过去的期限显示 _拦截高度_，请不要重新启动。
 
 在以下示例中， `Deadline Open`为 454, 早于`Current Epoch`500. 该miner不应关闭或重新启动：
 

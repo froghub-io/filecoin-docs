@@ -68,7 +68,7 @@ lotus-miner sectors status --log 0
 
 ## 升级质押的扇区
 
-最低承诺期为6个月。 但是，在此之前，可以用包含交易的新扇区替代承诺扇区，只要替代扇区在承诺扇区之后失效。 为_upgrade_标记一个扇区:
+最低承诺期为6个月。 但是，在此之前，可以用包含交易的新扇区替代承诺扇区，只要替代扇区在承诺扇区之后失效。 为 _upgrade_ 标记一个扇区:
 
 ```sh
 lotus-miner sectors mark-for-upgrade <sector number>
@@ -84,7 +84,7 @@ lotus-miner sectors mark-for-upgrade <sector number>
 lotus-miner sectors check-expire
 ```
 
-如果你想检查将在33天内过期的扇区(devnet中的669600 epoch)，添加'——cut - off '选项，和你想要的epoch:
+如果你想检查将在33天内过期的扇区(devnet中的669600 epoch)，添加`--cutoff`选项，和你想要的epoch:
 
 ```shell with-output
 lotus-miner sectors check-expire --cutoff 669600
@@ -107,7 +107,7 @@ ID  SealProof  InitialPledge  Activation                      Expiration        
 lotus-miner sectors renew [command options] [arguments...]
 ```
 
-这是一个选择周期在' epochnumber-a ' epoch和' epochnumber-b ' epoch之间的扇区并将其更新为1555200 epoch的例子:
+这是一个选择周期在 `epochnumber-a` epoch和 `epochnumber-b` epoch之间的扇区并将其更新为1555200 epoch的例子:
 
 ```shell
 lotus-miner sectors renew  --from <epochnumber-a> --to <epochnumber-b> --new-expiration 1555200
@@ -119,8 +119,8 @@ lotus-miner sectors renew  --from <epochnumber-a> --to <epochnumber-b> --new-exp
 lotus-miner sectors renew  --sector-file <your-sectorfile> --new-expiration 1555200
 ```
 
-::: 警告
-你必须选择要续订的扇区。这意味着你必须指定'--from '和'--to '选项，或者指定扇区文件，如果没有选择扇区，这个命令将不起作用。
+::: warning
+你必须选择要续订的扇区。这意味着你必须指定`--from`和`--to `选项，或者指定扇区文件，如果没有选择扇区，这个命令将不起作用。
 
 扇区文件格式:
 

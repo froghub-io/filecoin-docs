@@ -5,7 +5,7 @@ description: 如何开始在Filecoin上构建应用程序的文档。
 
 # 部署
 
-Filecoin 适用于建设者。如果您对利用 Filecoin 协议和分散存储网络来构建改变游戏规则的应用程序的潜力感到兴奋，那么您来对地方了。
+Filecoin 适用于构建者。如果您对利用 Filecoin 协议和分散存储网络来构建改变游戏规则的应用程序的潜力感到兴奋，那么您来对地方了。
 
 :::tip
 Use one of the community built tools and services to get started. [Take a look now →](../store/README.md)

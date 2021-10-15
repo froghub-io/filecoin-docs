@@ -35,13 +35,13 @@ curl -X POST -H 'Content-Type: application/json' \
 
 ### 亚马逊网络服务
 
-我们定期为每个项目发布 AMI [filecoin 网络](https://network.filecoin.io/). 要使用这些映像之一，只需搜索我们的 AMI 之一。你可以用这个 [在“us-west-2”区域中填充对 Lotus 的搜索的示例链接](https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;search=lotus-mainnet;ownerAlias=657871693752;sort=name).
+我们定期为每个项目发布 AMI [filecoin 网络](https://network.filecoin.io/). 要使用这些映像之一，只需搜索我们的 AMI 之一。你可以用这个 [在`us-west-2`区域中填充对 Lotus 的搜索的示例链接](https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;search=lotus-mainnet;ownerAlias=657871693752;sort=name).
 
 <a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;search=lotus-mainnet;ownerAlias=657871693752;sort=name" alt="AWS Logo"><img src="../images/cloud/aws-logo.svg" style="max-width: 40%; cursor: hand !important;"/></a>
 
 ![启动-filecoin-ami](../images/cloud/aws-launch-ami.png)
 
-启动 AWS 实例后，您应该使用“ubuntu”帐户登录。
+启动 AWS 实例后，您应该使用`ubuntu`帐户登录。
 Filecoin 实例运行一个基于主机的防火墙 (UFW)，它阻止所有传入端口，除了
 用于端口 22 和 5678 (libp2p)。如果您想将实例置于许可安全组之后，这很有效。
 
@@ -51,7 +51,7 @@ ssh ubuntu@<your_instance_public_ipv4>
 
 ## 使用图像
 
-实例一启动，就会下载一个包含最近 2000 个状态根的大文件。在此期间，lotus API 不会启动，但 lotus _is_ 正在工作。大约20分钟后，状态root下载完成，lotus正常启动。这个过程是自动发生的。您无需为 Lotus 启动任何操作。
+实例一启动，就会下载一个包含最近 2000 个状态根的大文件。在此期间，lotus API 不会启动，但 lotus 正在工作。大约20分钟后，状态root下载完成，lotus正常启动。这个过程是自动发生的。您无需为 Lotus 启动任何操作。
 
 如果你有兴趣看看发生了什么，你可以在 systemd 日志中查看 lotus 的日志。
 
@@ -61,7 +61,7 @@ ssh ubuntu@<your_instance_public_ipv4>
 journalctl -u lotus-daemon
 ```
 
-当 stateroot 文件正在下载时，systemctl 会将此作业的状态显示为“`Activating`”。
+当 stateroot 文件正在下载时，systemctl 会将此作业的状态显示为`Activating`。
 
 您会注意到作业尚未开始。不用担心，导入 stateroot 文件后它会转换为活动状态。
 
