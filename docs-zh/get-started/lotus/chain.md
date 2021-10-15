@@ -72,7 +72,7 @@ lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws
 
 ### 全链快照
 
-完整的全链快照包含了从起源到当前提示集的每一个区块。你可以通过供给 `--import-chain` 选项来信任地导入这些完整的快照，以便在导入时重新计算完整的状态。
+完整的全链快照包含了从起源到当前tipset的每一个区块。你可以通过供给 `--import-chain` 选项来信任地导入这些完整的快照，以便在导入时重新计算完整的状态。
 
 ```sh
 lotus daemon --import-chain https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/complete_chain_with_finality_stateroots_latest.car

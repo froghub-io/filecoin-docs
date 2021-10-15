@@ -99,7 +99,7 @@ description: Filecoin规范、实现和生态系统的有用参考资料。
 - [Filstats.io](https://filstats.io) - 节点遥测监测-添加您的节点!
 - [Sentinel 项目](https://github.com/filecoin-project/sentinel) - Grafana背后的Filecoin网络监控与分析系统
 - [Statediff](https://node.glif.io/space07/statediff/rpc/) - 探索和比较Filecoin状态的变化。
-- "Orphan 块" (不是Filecoin规范中的官方协议术语) - 没有奖励的区块要么是在错误的提示集上挖掘的，网络没有及时交付, 或导致重组的混合.
+- "Orphan 块" (不是Filecoin规范中的官方协议术语) - 没有奖励的区块要么是在错误的tipset上挖掘的，网络没有及时交付, 或导致重组的混合.
   - [Orphan 块统计](https://filscout.com/en/orphan-block)
   - [Orphan 块集合](https://filscout.com/en/orphan-block/alllist)
 

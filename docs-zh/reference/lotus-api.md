@@ -516,7 +516,7 @@ Inputs:
 Response: `null`
 
 ### ChainGetTipSet
-ChainGetTipSet 返回由给定的 TipSetKey 指定的提示集。
+ChainGetTipSet 返回由给定的 TipSetKey 指定的tipset。
 
 
 Perms: read
@@ -4603,7 +4603,7 @@ Response:
 ```
 
 ### StateVMCirculatingSupplyInternal
-StateVMC CirculatingSupplyInternal 返回给定提示集的 Filecoin 流通供应量的近似值。
+StateVMC CirculatingSupplyInternal 返回给定tipset的 Filecoin 流通供应量的近似值。
 这是由运行时接口向 actors 代码报告的值。
 
 
