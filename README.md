@@ -1,34 +1,30 @@
 # Filecoin Docs
 
-**View conceptual documentation for the Filecoin project at [docs.filecoin.io](https://docs.filecoin.io/).** You may also be interested in Filecoin's [technical specifcation](https://filecoin-project.github.io/specs/) or the implementation details provided in the [lotus tutorial](https://lotu.sh).
-
-This repo generates the new conceptual Filecoin documentation at [docs.filecoin.io](https://docs.filecoin.io/), building off of the work done in [VuePress](https://github.com/vuejs/vuepress) by the IPFS Docs team to create their [spiffy new IPFS docs site](https://docs-beta.ipfs.io/) (in beta).
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b3586cdd-c0e3-404c-b451-875025e0e990/deploy-status)](https://app.netlify.com/sites/filecoin-docs/deploys)
+**查看Filecoin项目的概念中文文档请跳转到[filecoin-docs.froghub.io](https://filecoin-docs.froghub.io/).** 您可能还对Filecoin的[技术规范](https://filecoin-project.github.io/specs/) 或[lotus教程](https://lotu.sh)中实现细节感兴趣。
 
 ## Working on this platform
 
-To spin up a local instance of this new VuePress site, see below:
+要启动这个 VuePress 站点的本地实例，请参见下文：
 
-1. Install the NPM dependencies:
+1. 安装 NPM 依赖项：
 
    ```shell
    npm install
    ```
 
-2. Boot up the application in _dev mode_:
+2. 在 _开发模式_ 下启动中文版应用程序：
 
    ```shell
-   npm start
+   npm run start-zh
    ```
 
-3. Open [localhost:8080](http://localhost:8080) in your browser.
+3. 在浏览器中打开[localhost:8080](http://localhost:8080)。
 
 ## Code organization
 
-- Content lives in Markdown files in the `docs` folder. Each major section has its own subfolder.
-- Navigation is generated from [docs/.vuepress/config.js](https://github.com/filecoin-project/filecoin-docs/blob/master/docs/.vuepress/config.js) and the metadata within each Markdown file. Be sure to create an entry in this config file when adding new content.
-- To feature a new article on the homepage, you'll also need to update the `manualSidebar` object in the Home component at [docs/.vuepress/themes/components/Home.vue](https://github.com/filecoin-project/filecoin-docs/blob/master/docs/.vuepress/theme/components/Home.vue).
+- 中文翻译的内容位于`docs-zh`文件中，是英文文档路径`docs`的镜像。每个主要部分都有自己的子文件夹。
+- 导航是从 [docs-zh/.vuepress/config.js](https://github.com/filecoin-project/filecoin-docs/blob/master/docs-zh/.vuepress/config.js) 和每个 Markdown 文件中的元数据生成的。添加新内容时，请务必在此配置文件中创建一个条目。
+- 要在主页上展示新文章，您还需要 `manualSidebar` 在 [docs-zh/.vuepress/themes/components/Home.vue](https://github.com/filecoin-project/filecoin-docs/blob/master/docs-zh/.vuepress/theme/components/Home.vue).处更新Home 组件中的对象。
 
 ## Contributing
 
