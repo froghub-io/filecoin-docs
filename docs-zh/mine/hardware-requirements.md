@@ -1,6 +1,6 @@
 ---
 title: '硬件要求'
-description: 'Filecoin挖掘的最低硬件要求。'
+description: 'Filecoin挖矿的最低硬件要求。'
 breadcrumb: '硬件要求'
 ---
 
@@ -10,7 +10,7 @@ Filecoin 挖矿的硬件要求与 “封装” 一个扇区并为每个封装扇
 
 这些操作在计算上很昂贵，取决于操作员使用的扇区大小。 由运行 Miner 的 [Filecoin network](https://network.filecoin.io) 使用- nerpa，testnet，mainnet 等 -。 以供参考, 下面列出的要求对应于 mainnet 和一些 testnets (_calibration_, _nerpa_)使用的 **32GiB 扇区**.
 
-不同的 Filecoin Miner 实现可能会不同的分配封装任务，例如，使用除 Miner 之外的其他 Worker。假设所有挖掘操作均在同一台机器上进行，以下是“一般”要求。每个操作所需的资源将在下面详细介绍。有关硬件类型和用法的具体示例，请参见[挖掘架构](mining-architectures.md).
+不同的 Filecoin Miner 实现可能会不同的分配封装任务，例如，使用除 Miner 之外的其他 Worker。假设所有挖矿操作均在同一台机器上进行，以下是“一般”要求。每个操作所需的资源将在下面详细介绍。有关硬件类型和用法的具体示例，请参见[Miner 架构](mining-architectures.md).
 
 [[TOC]]
 

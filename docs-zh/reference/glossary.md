@@ -33,7 +33,7 @@ Filecoin 网络中的两个参与者可以签订一项协议，其中一方承�
 
 ## Election
 
-每个纪元(epoch)，Filecoin 存储 miner 的一小部分被选中为 Filecoin 区块链挖掘新的区块。miner 当选的概率大致与他们贡献的 Filecoin 网络总存储容量的份额成正比。
+每个纪元(epoch)，Filecoin 存储 miner 的一小部分被选中为 Filecoin 区块链挖出新的区块。miner 当选的概率大致与他们贡献的 Filecoin 网络总存储容量的份额成正比。
 
 ## Epoch
 
@@ -139,7 +139,7 @@ _封装 (Seal)_ 是 Filecoin 协议的基本组成部分之一。它是一个在
 
 是“test”和“network”的组合体，是其中一个用来指代[primary Filecoin testing networks](https://network.filecoin.io/#calibration)的术语.
 
-注：如果用作专有名词，请将该术语大写。例如，“我在 Testnet 上挖掘。”
+注：如果用作专有名词，请将该术语大写。例如，“我在 Testnet 上挖矿。”
 
 ## Tipset
 

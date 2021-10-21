@@ -18,5 +18,5 @@ breadcrumb: 挖矿
 您将要阅读的文档的 [入门](../get-started) 部分, 掌握 Filecoin 的工作原理，并熟悉 Filecoin 节点软件和工具。
 
 ::: warning
-在 Filecoin 上运行成功的挖掘操作具有很高的 [硬件要求](hardware-requirements.md) 并且除了对 Filecoin 十分熟悉之外，还需要系统部署和管理方面的经验。
+在 Filecoin 上运行成功的挖矿操作具有很高的 [硬件要求](hardware-requirements.md) 并且除了对 Filecoin 十分熟悉之外，还需要系统部署和管理方面的经验。
 :::

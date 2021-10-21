@@ -162,7 +162,7 @@ Lotus lite-node 是 Lotus full node的精简版，能够在低端硬件上运行
     100 FIL
     ```
 
-lite-node 的功能有限，并且设计为仅执行消息签名和事务操作。 Lite-nodes 不能直接密封数据或查询链。所有链请求都通过附加的full node。如果由于某种原因，full node离线，任何连接到它的精简节点也将离线。
+lite-node 的功能有限，并且设计为仅执行消息签名和事务操作。 Lite-nodes 不能直接封装数据或查询链。所有链请求都通过附加的full node。如果由于某种原因，full node离线，任何连接到它的精简节点也将离线。
 ### 访问和权限 
 
 设置 Lotus lite 节点而不使用 [API token from a full-node](./api-tokens/) 导致精简节点对full node具有只读访问权限。虽然对于大多数用例，只读访问应该没问题，但在某些情况下，您需要对full node进行写访问。

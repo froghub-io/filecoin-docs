@@ -9,7 +9,7 @@ breadcrumb: 'miner设置'
 {{ $frontmatter.description }}
 
 ::: warning
-仅当您完全满足要在其中进行挖掘的网络的[最低 ​​ 硬件要求](../hardware-requirements.md) 时，才能进行挖掘。由于采矿过程在多个方面对机器要求很高，并且依赖于精确的配置，我们强烈建议您具备 Linux 的管理经验。
+仅当您完全满足要在其中进行挖矿的网络的[最低 ​​ 硬件要求](../hardware-requirements.md) 时，才能进行挖矿。由于采矿过程在多个方面对机器要求很高，并且依赖于精确的配置，我们强烈建议您具备 Linux 的管理经验。
 :::
 
 [[TOC]]
@@ -101,7 +101,7 @@ swapon --show
 
 ### 为miner创建钱包
 
-你至少需要一个 BLS 钱包 (`t3...` for mainnet )来进行挖掘。我们建议使用[单独的所有者和工人地址](miner-addresses.md)。因此，创建至少两个钱包(除非你已经有一些了):
+你至少需要一个 BLS 钱包 (`t3...` for mainnet )来进行挖矿。我们建议使用[单独的所有者和工人地址](miner-addresses.md)。因此，创建至少两个钱包(除非你已经有一些了):
 
 ```sh
 # A new BLS address to use as owner address:

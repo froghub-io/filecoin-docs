@@ -99,9 +99,9 @@ breadcrumb: '基准测试'
 | `--miner-addr value` | 传递miner地址（只有在使用现有扇形结构时才需要）（默认："t01000"）。                                  |
 | `--help, -h`         | 显示帮助（默认：false）。                                                                    |
 
-### 密封
+### 封装
 
-使用 `lotus-bench sealing [命令选项] [参数...]` 对密封计算进行基准测试。例如：
+使用 `lotus-bench sealing [命令选项] [参数...]` 对封装计算进行基准测试。例如：
 
 ```shell with-output
 ./lotus-bench sealing

@@ -15,7 +15,7 @@ Filecoin 和 IPFS 是用于在分布式网络中存储和共享数据的互补�
 
 单独的 IPFS 不包含激励其他人存储数据的内置机制。这是 Filecoin 旨在解决的挑战。 Filecoin 建立在 IPFS 之上，旨在为长期存储创建分布式存储市场。具有大存储容量的节点可以将其存储租给用户并获得报酬。
 
-Filecoin 网络可确保安全存储数据。然而，存储、验证和解封（分别称为密封、证明和检索）的过程在计算上是昂贵的并且可能需要时间。这对于数据检索尤其重要，数据检索应该尽可能快。出于这个原因，Filecoin 启用了一个额外的检索市场，其中专用节点可以通过保留未密封的缓存副本来帮助快速从网络交付内容以进行支付。这种交付机制可能会使用 IPFS，但仍在设计中。有关交付机制的更多信息，请参阅 [ResNetLab 的去中心化数据交付市场研究](https:github.comprotocolResNetLabblobmasterOPEN_PROBLEMSDECENTRALIZED_DATA_DELIVERY_MARKETS.md)。
+Filecoin 网络可确保安全存储数据。然而，存储、验证和解封（分别称为封装、证明和检索）的过程在计算上是昂贵的并且可能需要时间。这对于数据检索尤其重要，数据检索应该尽可能快。出于这个原因，Filecoin 启用了一个额外的检索市场，其中专用节点可以通过保留未封装的缓存副本来帮助快速从网络交付内容以进行支付。这种交付机制可能会使用 IPFS，但仍在设计中。有关交付机制的更多信息，请参阅 [ResNetLab 的去中心化数据交付市场研究](https:github.comprotocolResNetLabblobmasterOPEN_PROBLEMSDECENTRALIZED_DATA_DELIVERY_MARKETS.md)。
 
 Filecoin 旨在增加长期持久性以安全存储大批量数据，而 IPFS 则针对内容的快速检索和分发进行优化。
 

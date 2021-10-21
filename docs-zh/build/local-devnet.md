@@ -145,6 +145,6 @@ breadcrumb: '本地dev-net'
 
 ## Textile cointainer
 
-Textile 的开发人员创建了一种快速的方法来运行 Lotus dev-net 以进行测试。除了易于设置之外，这个开发网的一个优点是使用模拟的“扇区构建器”，这使得诸如密封之类的昂贵操作变得更加容易。
+Textile 的开发人员创建了一种快速的方法来运行 Lotus dev-net 以进行测试。除了易于设置之外，这个开发网的一个优点是使用模拟的“扇区构建器”，这使得诸如封装之类的昂贵操作变得更加容易。
 
 前往 [textileio/lotus-devnet GitHub 仓库](https://github.com/textileio/lotus-devnet) 了解如何在 Textile dev-net 上设置节点.

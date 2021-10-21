@@ -7,7 +7,7 @@ description: Lotus Miner是由Protocol Labs编写的Filecoinminer实现
 
 {{ $frontmatter.description }}.
 
-本节包含使用 Lotus 设置和运行成功的挖掘操作的指南，并且**仅限高级用户**使用, 熟悉 [Filecoin 的工作原理](../../about-filecoin/how-filecoin-works.md), [采miner作原理](../how-mining-works.md) 以及 [Lotus 节点](../../store/lotus/README.md) 的操作。
+本节包含使用 Lotus 设置和运行成功的挖矿操作的指南，并且**仅限高级用户**使用, 熟悉 [Filecoin 的工作原理](../../about-filecoin/how-filecoin-works.md), [采miner作原理](../how-mining-works.md) 以及 [Lotus 节点](../../store/lotus/README.md) 的操作。
 
 ::: warning
 Lotus Mining for _mainnet_具有严格的最小硬件要求(../hardware-requirements.md)。 如果您的计算机不满足最低要求，请不要尝试安装。  

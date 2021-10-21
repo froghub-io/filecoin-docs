@@ -252,8 +252,8 @@ Filecoin Plusminer注册表是一个很棒的资源，但它只代表整个Filec
 | StorageDealCheckForAcceptance |客户端正在等待存储提供商签署并发布交易。|
 | StorageDealProposalAccepted |存储提供商拟接受存储交易提案;但是，存储提供程序目前还没有作出任何这样做的承诺。|
 | StorageDealAwaitingPreCommit |交易已经准备好了，必须被预提交。|
-| storagedealseal |存储提供商正在将数据密封到扇区中。您的数据负载越大，这将花费更长的时间。|
-| StorageDealActive |数据在一个密封扇区中，存储提供商可以将数据返回给您。|
+| storagedealseal |存储提供商正在将数据封装到扇区中。您的数据负载越大，这将花费更长的时间。|
+| StorageDealActive |数据在一个封装扇区中，存储提供商可以将数据返回给您。|
 | StorageDealExpired  |一笔交易已经度过了它的最后一个时代。存储提供商仍然可以使用数据，但没有义务向任何人提供。|
 
 #### 错误状态

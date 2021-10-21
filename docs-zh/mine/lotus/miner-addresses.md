@@ -1,6 +1,6 @@
 ---
 title: 'Lotus Miner: 地址'
-description: 'miner 可以配置所有者地址、工作地址和其他控制地址。这些允许管理从miner发送和接收的资金的粒度，并为挖掘操作提供额外的安全性。'
+description: 'miner 可以配置所有者地址、工作地址和其他控制地址。这些允许管理从miner发送和接收的资金的粒度，并为挖矿操作提供额外的安全性。'
 breadcrumb: 'Miner 地址'
 ---
 

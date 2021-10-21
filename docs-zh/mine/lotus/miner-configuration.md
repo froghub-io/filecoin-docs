@@ -188,9 +188,9 @@ RetrievalFilter = "/path/to/go/bin/bitscreen"
   # 如果超过MaxWaitDealsSectors交易被并行接受，只有MaxWaitDealsSectors交易将被并行处理
   # 注意，与处理吞入率相关的设置过高可能会导致扇区包装效率较差
   MaxWaitDealsSectors = 2
-  # 当创建新的CC扇区时，可以同时密封多少扇区的上限(0 =无限)
+  # 当创建新的CC扇区时，可以同时封装多少扇区的上限(0 =无限)
   MaxSealingSectors = 0
-  # 当创建有交易的新扇区时，可以同时密封多少扇区的上限(0 =无限)
+  # 当创建有交易的新扇区时，可以同时封装多少扇区的上限(0 =无限)
   MaxSealingSectorsForDeals = 0
   # CommittedCapacitySectorLifetime 是承诺容量(CC)扇区的持续时间
   # 在此之前，它必须扩展或转换为包含行业的交易
@@ -200,9 +200,9 @@ RetrievalFilter = "/path/to/go/bin/bitscreen"
   CommittedCapacitySectorLifetime = "12960h0m0s"
   
   # 一个新成立的行业在开始结业之前需要等待更多交易的一段时间。
-  # 完全填满的扇区将立即开始密封
+  # 完全填满的扇区将立即开始封装
   WaitDealsDelay = "6h0m0s"
-  # 是否保留未密封的交易数据副本，不管客户是否要求。这让miner
+  # 是否保留未封装的交易数据副本，不管客户是否要求。这让miner
   # 避免稍后解密数据的较高成本，以更多的存储空间为代价
   AlwaysKeepUnsealedCopy = true
   # 在向链提交扇区证明之前运行扇区终结
@@ -386,7 +386,7 @@ Batch 1:
 
 ## 存储部分
 
-存储区控制miner是否可以执行某些密封操作。根据设置和使用的附加 [seal workers](seal-workers.md), 您可能需要修改一些选项.
+存储区控制miner是否可以执行某些封装操作。根据设置和使用的附加 [seal workers](seal-workers.md), 您可能需要修改一些选项.
 
 ```toml
 [Storage]

@@ -7,7 +7,7 @@ description: "您可以备份Lotus节点。然后，如果出现问题，或者�
 
 您可以备份Lotus节点。然后，如果出现问题，或者只是希望将Lotus节点从一台计算机移动到另一台计算机，则可以恢复该备份。
 
-这个备份过程与[' lotus-miner ' backup](../../mine/lotus/backup-and-restore.md)的备份过程不同。此备份过程不保留任何挖掘信息。
+这个备份过程与[' lotus-miner ' backup](../../mine/lotus/backup-and-restore.md)的备份过程不同。此备份过程不保留任何挖矿信息。
 
 ## 备份
 

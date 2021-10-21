@@ -12,12 +12,12 @@ breadcrumb: '拆分 Miner 和Market流程'
 
 ## 概念
 
-Lotus 执行挖矿操作，例如将文件密封到扇区中，计算证明 这些文件并在链上提交证明。
+Lotus 执行挖矿操作，例如将文件封装到扇区中，计算证明 这些文件并在链上提交证明。
 Lotus 还执行市场运营，为客户提供存储和检索服务。
 
-现在可以在不同的进程中运行 miner 和 markets子系统。 服务提供者可以接受存储和检索交易而不影响正在进行的挖掘操作。 市场的过程通过JSON-RPC与挖掘进程通信。
+现在可以在不同的进程中运行 miner 和 markets子系统。 服务提供者可以接受存储和检索交易而不影响正在进行的挖矿操作。 市场的过程通过JSON-RPC与Miner进程通信。
 
-强烈建议在独立的物理或虚拟机上运行挖掘和市场流程，以便:  
+强烈建议在独立的物理或虚拟机上运行 `Miner` 和 `Markets` 流程，以便:  
 - 机器硬件可以根据流程的典型工作量进行定位  
 - 只有运行市场进程的机器才会公开公共端口
 
@@ -33,14 +33,14 @@ Lotus 还执行市场运营，为客户提供存储和检索服务。
 
 正如您所看到的，只有markets和fullnode/daemon运行libp2p主机向互联网公开公共端口。  mining/sealing/proving 节点保留完全私有的。 这提供了保护并降低了操作风险。
 
-市场节点通过sealing和storage API 与 mining/sealing/storage 节点对话，主要用于传递来自存储交易的密封件，以及获取用于检索的件。
-Market节点通过密封与 mining/sealing/storage 节点进行对话和存储api，主要用于从存储中分离出用于密封的部件交易，以及取件服务取回。
+市场节点通过sealing和storage API 与 mining/sealing/storage 节点对话，主要用于传递来自存储交易的封装件，以及获取用于检索的件。
+Market节点通过封装与 mining/sealing/storage 节点进行对话和存储api，主要用于从存储中分离出用于封装的部件交易，以及取件服务取回。
 
-市场和挖掘/密封/存储节点都需要访问守护进程的JSON-RPC端点，以便查询链和状态树，以及通过池将消息推送到网络。
+`market` 和 `mining/sealing/storage` 节点都需要访问守护进程的JSON-RPC端点，以便查询链和状态树，以及通过池将消息推送到网络。
 
 如下所示，`lotus`和`lotus-miner`CLI命令需要访问所有json-rpc端点。 记住，JSON-RPC端点是私有的，而不是私有的公开暴露(除非您操作一个公共的fullnode或网关节点!)
 
-另一个值得一提的方面是，市场和通过配置 mining/sealing/storage 节点，实现存储系统的共享(磁盘阵列或文件系统)，当它们运行在相同的系统上时，它们可以在本地运行机器，或者在单独的机器上运行时作为网络挂载。 这个设置支持更有效的访问，减少网络IO负载。
+另一个值得一提的方面是，市场和通过配置 `mining/sealing/storage` 节点，实现存储系统的共享(磁盘阵列或文件系统)，当它们运行在相同的系统上时，它们可以在本地运行机器，或者在单独的机器上运行时作为网络挂载。 这个设置支持更有效的访问，减少网络IO负载。
 
 ## 将`lotus-miner`整体拆分为子系统
 
@@ -79,8 +79,8 @@ Lotus v1.11.1在`Lotus-miner`进程中引入了`子系统`的概念。
   EnableMarkets = true
 ```
 
-2. `mining/sealing/proving`节点——负责Filecoin挖掘的`lotus-miner`流程，
-   扇区储存、密封、验证;
+2. `mining/sealing/proving`节点——负责Filecoin挖矿的`lotus-miner`流程，
+   扇区储存、封装、验证;
 
 ```toml
 [Subsystems]
@@ -199,8 +199,7 @@ lotus-miner backup /tmp/backup.cbor
 ```
 
 ::: info
-“采矿/密封/验证”节点上`config.Toml`的`[Libp2p]`部分
-可以删除，因为它将不再运行Libp2p节点，如上所述。  
+如上所述，`mining/sealing/proving`节点上`config.Toml`的`[Libp2p]`部分可以删除，因为它将不再运行Libp2p节点。 
 :::
 
 #### 步骤 2. 在`mining/sealing/proving`miner过程中禁用market子系统
@@ -228,10 +227,10 @@ export APISECTORINDEX=`lotus-miner auth api-info --perm=admin`
 2. 初始化`markets`节点。 这将执行Market节点的一次性设置。这个设置的一部分包括通过提交更新miner角色中的“peer id”链上的消息。 这是必要的，以便存储和检索客户机知道这一点这个miner的**交易**终端现在可以在一个新的地址(新的`markets`节点)。
 
 ::: warning
-在执行以下步骤之前，请确保您的主挖掘进程正在运行。
+在执行以下步骤之前，请确保您的Miner进程正在运行。
 :::
 
-对于本教程，我们将使用~/。 作为市场存储库路径的Lotusmarkets。 您不需要预先手动创建该文件夹。
+对于本教程，我们将使用 `~/.lotusmarkets` 作为markets存储库路径。您**不需要**手动提前创建文件夹。
 
 ```shell
 lotus-miner --markets-repo=~/.lotusmarkets init service --type=markets \
@@ -241,12 +240,10 @@ lotus-miner --markets-repo=~/.lotusmarkets init service --type=markets \
                                                         /tmp/backup.cbor
 ```
 
-3. 如果在这个过程中，你最终改变了`markets`的“multiaddr”  
-   进程到不同的主机和/或端口，你必须更新链上miner的multiaddr '。  
-   否则，客户希望与你的交易将不再能够连接你的节点。
+3. 如果在这个过程中，你最终改变了`markets`的`multiaddr`进程到不同的host和/或port，你必须更新链上`miner`的`multiaddr`。否则，客户希望与你的交易将不再能够连接你的节点。
 
 ::: tip
-在您的Market节点，onchain上的`multiaddr`应该与`config.toml`中` Libp2p `部分中设置的`ListenAddresses`相同。  
+在您的`Markets`节点，onchain上的`multiaddr`应该与`config.toml`中` Libp2p `部分中设置的`ListenAddresses`相同。  
 :::
 
 ```shell
@@ -339,9 +336,9 @@ MARKETS_API_INFO=...
 
 ### 与其他流程的Market节点进行交互
 
-对于所有`lotus-miner `进程中都存在的命令，默认情况下CLI的目标是` mining/seal/proving`进程，但是您可以通过'--call-on-markets '标志明确地将目标定位于`markets`进程。 例如，`log`和`auth`命令就是这样。
+对于所有 `lotus-miner `进程中都存在的命令，默认情况下CLI的目标是` mining/seal/proving`进程，但是您可以通过'--call-on-markets '标志明确地将目标定位于`markets`进程。 例如，`log`和`auth`命令就是这样。
 
-为了利用这一功能，您应该在运行命令文件中为`mining/seal/proving` miner(或lotus-worker)和` markets `miner配置以下环境变量
+为了利用这一功能，您应该在运行命令文件中为 `mining/seal/proving` miner(或lotus-worker)和` markets `miner配置以下环境变量
 
 ```shell
 export LOTUS_MARKETS_PATH=~/.lotusmarkets
@@ -384,11 +381,11 @@ lotus-miner sectors list
 
 如果您想恢复上面列出的更改，并返回作为单个进程运行 `lotus-miner`，请运行以下命令:
 
-1. 关闭“采矿/密封/检验”和`markets`节点。
+1. 关闭 `mining/sealing/proving` 和 `markets` 节点。
    
-2. 确保`mining/sealing/proving`节点公开，因为我们将在其上启用market子系统。 在`~/$LOTUS_MINER_PATH/config.toml`的[`Libp2p`节(https://docs.filecoin.io/mine/lotus/miner-configuration/#libp2p-section)中设置地址
+2. 确保`mining/sealing/proving`节点公开，因为我们将在其上启用market子系统。 在`~/$LOTUS_MINER_PATH/config.toml`的[`Libp2p`节点](https://docs.filecoin.io/mine/lotus/miner-configuration/#libp2p-section) 中设置地址
 
-3. 在`mining/sealing/proving`存储库中，更新`配置`。 并将`EnableMarkets`选项设置为`true`
+3. 在`mining/sealing/proving`存储库中，更新`config`。 并将 `EnableMarkets` 选项设置为 `true`
 ```toml
 [Subsystems]
   EnableMining = true
@@ -429,7 +426,7 @@ lotus-miner run
 lotus-miner net id
 ```
 
-8. 用上一步的结果更新miner的peer id和链上的multiaddr。
+8. 用上一步的结果更新 `miner` 的 `peer id` 和链上的 `multiaddr`。
 
 ```shell
 lotus-miner actor set-peer-id 12D3XXXXX
@@ -437,7 +434,7 @@ lotus-miner actor set-peer-id 12D3XXXXX
 
 一旦消息被确认，客户端将知道查找您的`mining/sealing/proving`节点的节点标识，该节点现在也运行`markets`子系统，即当前所有Lotus子系统。
 
-现在在你的“采矿/密封/证明”节点上，链上的`multiaddr`应该与config.toml中`Libp2p`设置的`ListenAddresses`相同。
+现在在你的`mining/sealing/proving`节点上，链上的`multiaddr`应该与config.toml中`Libp2p`设置的`ListenAddresses`相同。
 
 ```shell
 lotus-miner actor set-addrs <NEW_MULTIADDR>

@@ -1,6 +1,6 @@
 ---
 title: 'Lotus Miner: seal workers'
-description: 'Lotus Worker是一个独立的应用程序，可以使用它将密封过程的各个阶段卸载到不同的机器或进程。 本指南解释如何设置一个或多个Lotus Workers。  '
+description: 'Lotus Worker是一个独立的应用程序，可以使用它将封装过程的各个阶段卸载到不同的机器或进程。 本指南解释如何设置一个或多个Lotus Workers。  '
 breadcrumb: 'Lotus Workers'
 ---
 
@@ -8,13 +8,13 @@ breadcrumb: 'Lotus Workers'
 
 {{ $frontmatter.description }}
 
-当 **Lotus Miner** 可以自己运行每个密封阶段(使用默认配置), Lotus workers 就可以创建 _sealing pipeline_ 从而提高资源利用率并使主 miner 从 CPU 密集型任务中解放出来，这样它就可以专注于执行*WindowPoSTs*和*WinningPoSTs*并将其提交给链。
+当 **Lotus Miner** 可以自己运行每个封装阶段(使用默认配置), Lotus workers 就可以创建 _sealing pipeline_ 从而提高资源利用率并使主 miner 从 CPU 密集型任务中解放出来，这样它就可以专注于执行*WindowPoSTs*和*WinningPoSTs*并将其提交给链。
 
 [[TOC]]
 
 ## workers 的资源配置
 
-每个**Lotus Worker**可以运行多个任务，这取决于您的硬件资源。 每个槽被称为_window_。 最终的数量由可用的铁芯数量和分配给它的密封阶段的要求决定。 这意味着8核CPU和单个GPU上的单个worker最多只能运行:
+每个**Lotus Worker**可以运行多个任务，这取决于您的硬件资源。 每个槽被称为_window_。 最终的数量由可用的铁芯数量和分配给它的封装阶段的要求决定。 这意味着8核CPU和单个GPU上的单个worker最多只能运行:
 
 -任务将使用的CPU线程数。  
 -良好性能所需的最小RAM数量。  
@@ -23,7 +23,7 @@ breadcrumb: 'Lotus Workers'
 
 ### 任务资源表
 
-默认的资源表位于[resources.go](https://github.com/filecoin-project/lotus/blob/master/extern/sector-storage/resources.go#L47)中，可以对其进行编辑以调整调度行为，以更好地适应特定的密封集群。  
+默认的资源表位于[resources.go](https://github.com/filecoin-project/lotus/blob/master/extern/sector-storage/resources.go#L47)中，可以对其进行编辑以调整调度行为，以更好地适应特定的封装集群。  
 
 默认资源值表。 其中一些值相当保守:
 
@@ -61,7 +61,7 @@ Unseal任务与PreCommit1任务具有相同的资源用途。
 
 调度器使用了资源窗口的概念，以防止需要大量资源的任务被资源需求较小的任务占用。  
 
-资源窗口只是一个密封任务的桶，当没有任务运行时，给定的工作人员可以基于工作人员可用的资源并行运行这些任务。  
+资源窗口只是一个封装任务的桶，当没有任务运行时，给定的工作人员可以基于工作人员可用的资源并行运行这些任务。  
 
 在调度程序中，每个worker有:
 -调度窗口—两个资源窗口，用于分配从全局队列执行的任务  
@@ -72,7 +72,7 @@ Unseal任务与PreCommit1任务具有相同的资源用途。
 
 在调度窗口被许多任务填满后，它被发送给worker进行处理。 worker将从调度窗口中取出任务，并开始在准备窗口中准备它们。 准备步骤完成后，任务将在执行窗口中执行。  
 
-当worker完全处理了一个调度窗口后，它被发送回全局调度程序以获得更多的密封任务。
+当worker完全处理了一个调度窗口后，它被发送回全局调度程序以获得更多的封装任务。
 
 ### 任务优先级
 
@@ -104,7 +104,7 @@ Unseal任务与PreCommit1任务具有相同的资源用途。
 ## 安装
 
 ::: callout
-在密封过程中，大量的数据会在workers之间移动/复制，因此他们之间必须有良好的网络连接。
+在封装过程中，大量的数据会在workers之间移动/复制，因此他们之间必须有良好的网络连接。
 :::
 
 在跟随[安装指南](../../get-started/lotus/installation.md)安装其他软件的时候，`lotus-worker`应用程序应该已经同时被构建并安装了。为了简单说明，我们建议在将要运行 Lotus Workers 的计算机中遵循相同的步骤(即使在该设备中未使用 Lotus Miner 和 Lotus 守护程序)。
@@ -204,9 +204,9 @@ Worker 1, host othercomputer
 
 ### Miner 和 worker 一起工作
 
-您可以在与 _Lotus Miner_ 相同的机器上运行 _Lotus Worker_。 这有助于管理进程之间的优先级，或更好地为每个任务分配可用的cpu。 为了避免冲突，我们建议禁用miner密封配置中的所有任务类型。
+您可以在与 _Lotus Miner_ 相同的机器上运行 _Lotus Worker_。 这有助于管理进程之间的优先级，或更好地为每个任务分配可用的cpu。 为了避免冲突，我们建议禁用miner封装配置中的所有任务类型。
 
-另外，要注意密封进程使用的本地资源(特别是CPU)。 windowpost是CPU密集型的，需要定期由miner提交。 如果一个miner正在并行执行其他cpu绑定的密封操作，它可能无法及时提交windowpost，因此[丢失抵押品](../slashing.md)。 出于这个原因，我们建议将可用的CPU核和密封阶段仔细分配给Lotus miner和Lotus Workers。
+另外，要注意封装进程使用的本地资源(特别是CPU)。 windowpost是CPU密集型的，需要定期由miner提交。 如果一个miner正在并行执行其他cpu绑定的封装操作，它可能无法及时提交windowpost，因此[丢失抵押品](../slashing.md)。 出于这个原因，我们建议将可用的CPU核和封装阶段仔细分配给Lotus miner和Lotus Workers。
 
 请注意，如果您共同定位miner和worker(s)，您不需要打开miner API，它可以一直监听本地接口。
 
